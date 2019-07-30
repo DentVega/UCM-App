@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.brianvega.ucm_app.BR
 import com.brianvega.ucm_app.fragments.movies.MoviesViewModel
 import com.brianvega.ucm_app.models.movie.Movie
 
@@ -46,7 +47,9 @@ class RvMoviesAdapter internal constructor(private var moviesViewModel: MoviesVi
         }
 
         fun bind(moviesViewModel: MoviesViewModel, position: Int) {
-
+            binding?.setVariable(BR.model,  moviesViewModel)
+            binding?.setVariable(BR.position, position)
+            binding?.executePendingBindings()
         }
 
     }

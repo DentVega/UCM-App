@@ -11,6 +11,7 @@ import android.view.Menu
 import com.brianvega.ucm_app.R
 import com.brianvega.ucm_app.activities.BaseActivity
 import com.brianvega.ucm_app.fragments.heroes.HeroesFragment
+import com.brianvega.ucm_app.fragments.home.HomeFragment
 import com.brianvega.ucm_app.fragments.movies.MoviesFragment
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -32,7 +33,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     private fun loadReferences() {
-        loadFragment(HeroesFragment.newInstance(), R.id.frame_container)
+        loadFragment(HomeFragment.newInstance(), R.id.frame_container)
     }
 
     override fun onBackPressed() {
@@ -59,22 +60,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.nav_home -> {
-                // Handle the camera action
+                loadFragment(HomeFragment.newInstance(), R.id.frame_container)
             }
             R.id.nav_heroes -> {
                 loadFragment(HeroesFragment.newInstance(), R.id.frame_container)
             }
             R.id.nav_movies -> {
                 loadFragment(MoviesFragment.newInstance(), R.id.frame_container)
-            }
-            R.id.nav_tools -> {
-
-            }
-            R.id.nav_share -> {
-
-            }
-            R.id.nav_send -> {
-
             }
         }
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
