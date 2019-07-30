@@ -33,6 +33,6 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun loadNextActivity() {
-        UtilActivityNavigation.goToActivity(this, MainActivity::class.java, null, true)
+        UtilActivityNavigation.goToActivity(this, MainActivity::class.java, {}, true)
     }
 }

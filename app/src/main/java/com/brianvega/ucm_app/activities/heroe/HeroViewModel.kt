@@ -7,7 +7,6 @@ import com.brianvega.ucm_app.models.hero.HeroObservable
 
 class HeroViewModel: ViewModel() {
 
-    private var repository: HeroRepository = HeroRepository()
     private var heroObservable: HeroObservable = HeroObservable()
 
     fun callHero() {

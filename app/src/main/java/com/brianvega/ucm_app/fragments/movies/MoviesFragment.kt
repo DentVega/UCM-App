@@ -35,6 +35,7 @@ class MoviesFragment: BaseFragment() {
     }
 
     private fun loadReferences() {
+        viewModel?.activity = activity
         viewModel?.callMovies()
         viewModel?.getMovies()?.observe(this, Observer { movies ->
             hideProgressBar(progress_bar_movies, activity as Activity)

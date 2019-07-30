@@ -28,4 +28,12 @@ class Hero {
         this.description = description
     }
 
+    constructor(id: Long?, name: String?, urlProfilePicture: String?, description: String?) {
+        this.id = id
+        this.name = name
+        this.urlProfilePicture = urlProfilePicture
+        this.description = description
+    }
+
+
 }

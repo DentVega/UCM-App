@@ -17,6 +17,10 @@ class DaoUtility {
 
     fun getAllMovies(): LiveData<List<Movie>> = movieDao.getAll()
 
+    fun getMovieById(movieId: Long): LiveData<Movie> = movieDao.getMovieById(movieId)
+
+    fun getHeroesByMovieId(movieId: Long): LiveData<List<HeroDao.HeroMovie>> = heroDao.getHeroesByIdMovie(movieId)
+
     fun saveHeroes(heroes: List<Hero>) {
         heroDao.insertHeroes(heroes)
     }

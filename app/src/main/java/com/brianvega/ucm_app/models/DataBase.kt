@@ -10,13 +10,16 @@ import com.brianvega.ucm_app.MainApp
 import com.brianvega.ucm_app.models.converters.ConvertersDate
 import com.brianvega.ucm_app.models.hero.Hero
 import com.brianvega.ucm_app.models.hero.HeroDao
+import com.brianvega.ucm_app.models.heroMovie.HeroMovie
+import com.brianvega.ucm_app.models.heroMovie.HeroMovieDao
 import com.brianvega.ucm_app.models.movie.Movie
 import com.brianvega.ucm_app.models.movie.MovieDao
 
 @Database(
     entities = [
         Hero::class,
-        Movie::class
+        Movie::class,
+        HeroMovie::class
     ], version = 1
 )
 @TypeConverters(ConvertersDate::class)
@@ -25,6 +28,8 @@ abstract class DataBase : RoomDatabase() {
     abstract fun heroDao(): HeroDao
 
     abstract fun movieDao(): MovieDao
+
+    abstract fun heroMovieDao(): HeroMovieDao
 
     companion object {
 
@@ -37,9 +42,11 @@ abstract class DataBase : RoomDatabase() {
             return INSTANCE as DataBase
         }
 
-        private fun create (context: Context): DataBase {
-            return Room.databaseBuilder(context, DataBase::class.java,
-                Constants.NAME_DATA_BASE)
+        private fun create(context: Context): DataBase {
+            return Room.databaseBuilder(
+                context, DataBase::class.java,
+                Constants.NAME_DATA_BASE
+            )
                 .build()
         }
 

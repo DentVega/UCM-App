@@ -19,7 +19,7 @@ class HeroActivity : BaseActivity() {
     }
 
     private fun setupBinding(savedInstanceState: Bundle?) {
-        val activityMainBinding: ActivityHeroBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        val activityMainBinding: ActivityHeroBinding = DataBindingUtil.setContentView(this, R.layout.activity_hero)
         heroViewModel = ViewModelProviders.of(this).get(HeroViewModel::class.java)
         activityMainBinding.model = heroViewModel
         setupHeroUpdate()
