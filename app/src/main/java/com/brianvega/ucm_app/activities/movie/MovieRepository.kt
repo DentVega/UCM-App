@@ -27,4 +27,8 @@ class MovieRepository {
         heroes = getHeroesByMovieDataBase(movieId)
     }
 
+    fun saveMovie(movie: Movie) {
+        daoUtility.saveMovie(movie)
+    }
+
 }

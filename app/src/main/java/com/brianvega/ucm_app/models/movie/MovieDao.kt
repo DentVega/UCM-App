@@ -18,4 +18,7 @@ interface MovieDao {
     @Insert
     fun insertMovies(movies: List<Movie>)
 
+    @Insert
+    fun insertMovie(movie: Movie)
+
 }

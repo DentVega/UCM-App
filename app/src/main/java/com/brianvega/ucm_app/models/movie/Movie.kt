@@ -1,9 +1,12 @@
 package com.brianvega.ucm_app.models.movie
 
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import com.bumptech.glide.Glide
 import java.util.*
 
 @Entity(tableName = "movie")
@@ -34,6 +37,14 @@ class Movie {
         this.releaseDate = releaseDate
         this.amountCollected = amountCollected
         this.shortSummary = shortSummary
+    }
+
+    object DataBindingAdapter {
+        @BindingAdapter("bind:imageUrl")
+        @JvmStatic
+        fun loadImage(view: ImageView, url: String) {
+            Glide.with(view.context).load(url).into(view)
+        }
     }
 
 }

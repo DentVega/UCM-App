@@ -21,4 +21,6 @@ class MovieObservable: BaseObservable() {
 
     fun getHeroes(): LiveData<List<HeroDao.HeroMovie>>? = movieRepository.getHeroes()
 
+    fun saveMovie(movie: Movie) = movieRepository.saveMovie(movie)
+
 }

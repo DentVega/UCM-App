@@ -41,4 +41,8 @@ class MoviesViewModel: ViewModel() {
         UtilActivityNavigation.goToActivityExtraId(activity!!, MovieActivity::class.java, movie.id!!, false)
     }
 
+    fun createMovie() {
+        UtilActivityNavigation.goToActivity(activity!!, MovieActivity::class.java, {}, false)
+    }
+
 }

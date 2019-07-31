@@ -41,6 +41,13 @@ class MoviesFragment: BaseFragment() {
             hideProgressBar(progress_bar_movies, activity as Activity)
             viewModel?.setMoviesInRecyclerAdapter(movies)
         })
+        loadButtons()
+    }
+
+    private fun loadButtons() {
+        fab_create_movie.setOnClickListener {
+            viewModel?.createMovie()
+        }
     }
 
 }

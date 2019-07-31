@@ -29,4 +29,8 @@ class DaoUtility {
         movieDao.insertMovies(movies)
     }
 
+    fun saveMovie(movie: Movie) {
+        movieDao.insertMovie(movie)
+    }
+
 }
