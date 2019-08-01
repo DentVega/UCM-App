@@ -24,4 +24,8 @@
     <string name="short_summary">Resumen Corto</string>
     <string name="amount_collected">Monto recaudado</string>
     <string name="title">Titulo</string>
+    <string name="cancel">Cancelar</string>
+    <string name="creation_finished">Creacion terminada</string>
+    <string name="update_finished">Actualizacion terminada</string>
+    <string name="adding_hero">Añadiendo heroe</string>
 </resources>

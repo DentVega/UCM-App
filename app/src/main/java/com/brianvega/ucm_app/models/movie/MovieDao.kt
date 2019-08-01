@@ -1,10 +1,7 @@
 package com.brianvega.ucm_app.models.movie
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface MovieDao {
@@ -20,5 +17,11 @@ interface MovieDao {
 
     @Insert
     fun insertMovie(movie: Movie)
+
+    @Update
+    fun updateMovie(movie: Movie)
+
+    @Delete
+    fun deleteMovie(movie: Movie)
 
 }

@@ -14,9 +14,9 @@ interface HeroDao {
     @Insert
     fun insertHeroes(heroes: List<Hero>)
 
-    @Query("SELECT hero.id as idHero, hero.name as nameHero, hero.description as descriptionHero, hero.url_profile_picture as urlPhotoHero FROM hero, heromovie WHERE heromovie.id_movie = :movieId AND heromovie.id_hero = hero.id")
+    @Query("SELECT hero.id as idHero, hero.name as nameHero, hero.description as descriptionHero, hero.url_profile_picture as urlPhotoHero FROM hero, heromovie WHERE heromovie.id_movie = :movieId AND hero.id = heromovie.id_hero")
     fun getHeroesByIdMovie(movieId: Long): LiveData<List<HeroMovie>>
 
-    data class HeroMovie(val idHero: String? ,val nameHero: String?, val descriptionHero: String, val urlPhotoHero: String?)
+    data class HeroMovie(val idHero: Long? ,val nameHero: String?, val descriptionHero: String, val urlPhotoHero: String?)
 
 }
