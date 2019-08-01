@@ -18,4 +18,9 @@ class MoviesRepository {
         movies = getMovieDataBase()
     }
 
+    fun deleteMovie(movie: Movie) {
+        daoUtility.deleteMovie(movie)
+    }
+
+
 }

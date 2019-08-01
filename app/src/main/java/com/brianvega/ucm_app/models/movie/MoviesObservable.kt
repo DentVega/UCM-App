@@ -14,4 +14,8 @@ class MoviesObservable: BaseObservable() {
 
     fun getMovies(): LiveData<List<Movie>>? = movieRepository.getMovies()
 
+    fun deleteMovie(movie: Movie) {
+        movieRepository.deleteMovie(movie)
+    }
+
 }

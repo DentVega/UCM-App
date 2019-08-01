@@ -50,7 +50,7 @@ class DaoUtility {
         movieDao.updateMovie(movie)
     }
 
-    fun deleteMovie(movie: Movie) {
+    fun deleteMovie(movie: Movie) = scope.launch(Dispatchers.IO) {
         movieDao.deleteMovie(movie)
     }
 

@@ -45,4 +45,9 @@ class MoviesViewModel: ViewModel() {
         UtilActivityNavigation.goToActivity(activity!!, MovieActivity::class.java, {}, false)
     }
 
+    fun deleteMovie(movie: Movie?) {
+        if (movie != null)
+            moviesObservable.deleteMovie(movie)
+    }
+
 }

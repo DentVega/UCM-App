@@ -95,7 +95,6 @@ class MovieViewModel : ViewModel() {
 
     private fun saveMovie(movie: Movie) {
         movieObservable.saveMovie(movie)
-        movieObservable.saveHeroMovies(heroeMovie, movieId!!)
     }
 
     private fun updateMovie(movie: Movie) {

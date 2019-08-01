@@ -2,6 +2,7 @@ package com.brianvega.ucm_app.activities.movie
 
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.View
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -116,6 +117,7 @@ class MovieActivity : BaseActivity() {
         edt_amount_collected.setText(movie.amountCollected.toString())
         edt_short_summary.setText(movie.shortSummary)
         Glide.with(this).load(movie.urlMoviePoster).into(img_poster_movie)
+        fab_add_hero.visibility = View.VISIBLE
         loadButton(movie)
     }
 
